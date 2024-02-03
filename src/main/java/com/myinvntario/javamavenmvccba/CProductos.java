@@ -224,6 +224,10 @@ public class CProductos {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error e seleccion, error : " +e.toString());
         }
+        //este se coloca para solucionar un error con el metodo ModificarProductos 
+        //el cual no cargaba los cambios hechos en la tabla.
+        //se deshabilita el cambio de referencia en el formulario.
+        paramReferencia.setEditable(false);
     
     }
  
@@ -232,7 +236,8 @@ public class CProductos {
                                   JTextField paramPrecioCompra, JTextField paramPrecioVenta){      
         
         //se incorporan los valores de los valores recibidos 
-        //por el formulario
+        //por el formulario 
+        
         setReferencia(paramReferencia.getText());
         setNombre(paramNombre.getText());
         setModelo(paramModelo.getText());
